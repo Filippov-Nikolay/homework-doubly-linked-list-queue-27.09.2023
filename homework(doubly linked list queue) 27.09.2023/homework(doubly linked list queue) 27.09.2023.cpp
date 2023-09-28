@@ -17,6 +17,7 @@ int main() {
 
     a.Print();
     a.Extract();
+    a.Extract();
     cout << endl;
 
     a.Print();

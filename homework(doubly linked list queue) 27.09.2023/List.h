@@ -56,16 +56,24 @@ void List<T>::Push(int d) {
 }
 template <class T>
 void List<T>::Extract() {
-	Element<T>* del = Head;
-	Element<T>* temp = Head;
+	if (count != 0) {
+		Element<T>* del = Head;
+		
+		if (count != 1) {
+			Element<T>* temp = Head;
 
-	temp = temp->next;
-	temp->prev = NULL;
-	Head = temp;
+			temp = temp->next;
+			temp->prev = NULL;
+			Head = temp;
+		}
+		
+		delete del;
 
-	delete del;
-
-	--count;
+		count--;
+		
+	}
+	else
+		cout << "Ёлементов больше нет!" << endl;
 }
 template <class T>
 void List<T>::Clear() {
@@ -83,12 +91,16 @@ int List<T>::GetCount() { return count; }
 
 template <class T>
 void List<T>::Print() {
-	Element<T>* temp = Head;
-	while (temp->next != 0) {
-		cout << temp->data << " ";
-		temp = temp->next;
+	if (count != 0) {
+		Element<T>* temp = Head;
+		while (temp->next != 0) {
+			cout << temp->data << " ";
+			temp = temp->next;
+		}
+		cout << temp->data;
 	}
-	cout << temp->data;
+	else
+		cout << "Ёлементов больше нет!" << endl;
 }
 template <class T>
 void List<T>::DelAll() {
