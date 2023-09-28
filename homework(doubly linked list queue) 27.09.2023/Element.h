@@ -1,7 +1,8 @@
 #pragma once
 
+template <typename T>
 struct Element {
-	int data;
+	T data;
 	Element* prev, * next;
 public:
 	Element() = default;

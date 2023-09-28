@@ -6,7 +6,7 @@ using namespace std;
 
 template <class T>
 class List {
-	Element* Head, * Tail;
+	Element<T>* Head, * Tail;
 	int count; // Кол-во
 
 	int maxQueueLength; // Макс. кол-во
@@ -39,7 +39,7 @@ List<T>::~List() {
 template <class T>
 void List<T>::Push(int d) {
 	if (!IsFull()) {
-		Element* temp = new Element(d);
+		Element<T>* temp = new Element<T>(d);
 		temp->next = 0;
 		temp->prev = Tail;
 
@@ -56,8 +56,8 @@ void List<T>::Push(int d) {
 }
 template <class T>
 void List<T>::Extract() {
-	Element* del = Head;
-	Element* temp = Head;
+	Element<T>* del = Head;
+	Element<T>* temp = Head;
 
 	temp = temp->next;
 	temp->prev = NULL;
@@ -83,7 +83,7 @@ int List<T>::GetCount() { return count; }
 
 template <class T>
 void List<T>::Print() {
-	Element* temp = Head;
+	Element<T>* temp = Head;
 	while (temp->next != 0) {
 		cout << temp->data << " ";
 		temp = temp->next;
@@ -95,9 +95,9 @@ void List<T>::DelAll() {
 	while (count != 0) {
 		int i = 1;
 
-		Element* Del = Head;
-		Element* PrevDel = Del->prev;
-		Element* AfterDel = Del->next;
+		Element<T>* Del = Head;
+		Element<T>* PrevDel = Del->prev;
+		Element<T>* AfterDel = Del->next;
 
 		if (PrevDel != 0 && count != 1)
 			PrevDel->next = AfterDel;
