@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include "Element.h"
 
@@ -7,24 +7,24 @@ using namespace std;
 template <class T>
 class List {
 	Element<T>* Head, * Tail;
-	int count; // Кол-во
+	int count; // РљРѕР»-РІРѕ
 
-	int maxQueueLength; // Макс. кол-во
+	int maxQueueLength; // РњР°РєСЃ. РєРѕР»-РІРѕ
 public:
 	List(int m);
 	~List();
 
-	void Push(int d); // Добавлвение элемента
-	void Clear(); // Очистка стека
-	void Extract(); // Удаление элемента
+	void Push(int d); // Р”РѕР±Р°РІР»РІРµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
+	void Clear(); // РћС‡РёСЃС‚РєР° СЃС‚РµРєР°
+	void Extract(); // РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
 
-	bool IsEmpty(); // Проверка существования элементов в стеке
-	bool IsFull(); // Проверка на переполнение стека
-	int GetCount(); // Получить количество
+	bool IsEmpty(); // РџСЂРѕРІРµСЂРєР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РІ СЃС‚РµРєРµ
+	bool IsFull(); // РџСЂРѕРІРµСЂРєР° РЅР° РїРµСЂРµРїРѕР»РЅРµРЅРёРµ СЃС‚РµРєР°
+	int GetCount(); // РџРѕР»СѓС‡РёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ
 
-	void Print(); // Вывод всех элементов
+	void Print(); // Р’С‹РІРѕРґ РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ
 
-	void DelAll(); // Удалить весь стек
+	void DelAll(); // РЈРґР°Р»РёС‚СЊ РІРµСЃСЊ СЃС‚РµРє
 };
 
 template <class T>
@@ -73,7 +73,7 @@ void List<T>::Extract() {
 		
 	}
 	else
-		cout << "Элементов больше нет!" << endl;
+		cout << "Р­Р»РµРјРµРЅС‚РѕРІ Р±РѕР»СЊС€Рµ РЅРµС‚!" << endl;
 }
 template <class T>
 void List<T>::Clear() {
@@ -100,7 +100,7 @@ void List<T>::Print() {
 		cout << temp->data;
 	}
 	else
-		cout << "Элементов больше нет!" << endl;
+		cout << "Р­Р»РµРјРµРЅС‚РѕРІ Р±РѕР»СЊС€Рµ РЅРµС‚!" << endl;
 }
 template <class T>
 void List<T>::DelAll() {
